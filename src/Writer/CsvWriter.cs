@@ -60,7 +60,7 @@ public class CsvWriter<T> : ICsvWriter<T>
             foreach (var element in _csvData)
             {
                 var rowElements = element.Values
-                    .Select(x => x.ToString().Replace("\"", "\"\""))
+                    .Select(x => x.ToString()!.Replace("\"", "\"\""))
                     .ToList();
                 var rowStr = string.Join(
                     _delimiterType == CsvDelimiterType.Comma ? "," : ";",
@@ -100,7 +100,7 @@ public class CsvWriter<T> : ICsvWriter<T>
         modelProperties.ForEach(
             x =>
             {
-                expandoObject.Add(x.Name, x.GetValue(model));
+                expandoObject.Add(x.Name, x.GetValue(model) ?? throw new NotImplementedException("What to do when property is null?"));
             }
         );
         _csvData.Add(expandoObject);
@@ -114,10 +114,10 @@ public class CsvWriter<T> : ICsvWriter<T>
         modelProperties.ForEach(
             x =>
             {
-                var columnAttribute = (CsvColumnAttribute)x.GetCustomAttribute(
+                var columnAttribute = x.GetCustomAttribute(
                     typeof(CsvColumnAttribute),
                     false
-                );
+                ) as CsvColumnAttribute;
                 expandoObject.Add(x.Name, columnAttribute == null ? x.Name : columnAttribute.Name);
             }
         );

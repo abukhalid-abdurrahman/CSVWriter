@@ -19,7 +19,7 @@ public class CsvFileReader : ICsvFileReader
         while (!reader.EndOfStream)
         {
             var line = await reader.ReadLineAsync();
-            data.Add(line);
+            data.Add(line!);
         }
         return data;
     }
