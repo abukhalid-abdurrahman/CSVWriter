@@ -19,7 +19,7 @@ namespace CSVWriter.CsvFileWriter
         {
             try
             {
-                StreamWriter streamWriter = new StreamWriter(path, false, Encoding.UTF8);
+                var streamWriter = new StreamWriter(path, false, Encoding.UTF8);
 
                 foreach (var line in lines)
                 {

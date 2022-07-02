@@ -39,14 +39,14 @@ namespace CSVWriter.Reader
 
         private List<T> ReadRows(List<string> rows, bool hasHeaders)
         {
-            List<T> data = new List<T>();
+            var data = new List<T>();
 
-            for (int i = 0; i < rows.Count; i++)
+            for (var i = 0; i < rows.Count; i++)
             {
                 if (i < 1 && hasHeaders)
                     continue;
                 
-                string[] rowCells = rows[i].Split(';');
+                var rowCells = rows[i].Split(';');
                 rowCells = _delimetter == CsvDelimetterType.Comma ? SetCommaDelimetter(rows[i]) : rowCells;
                 data.Add(SetModelProperty(rowCells));
             }
@@ -56,7 +56,7 @@ namespace CSVWriter.Reader
 
         private string[] SetCommaDelimetter(string row)
         {
-            Regex cellBlockRegex = new Regex("\".*\"");
+            var cellBlockRegex = new Regex("\".*\"");
             var matchResult = cellBlockRegex.Match(row);
             if (!string.IsNullOrEmpty(matchResult.Value))
             {
@@ -75,7 +75,7 @@ namespace CSVWriter.Reader
                 
             var model = new T();
 
-            for (int i = 0; i < properties.Count; i++)
+            for (var i = 0; i < properties.Count; i++)
             {
                 model.SetPropertyValue(properties[i].Name, rowCells[i]);
             }
