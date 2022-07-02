@@ -1,16 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSVWriter", "CSVWriter\CSVWriter.csproj", "{1110DC49-175D-459F-B3DD-8E18484A038F}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "src\src.csproj", "{861E9A1D-3521-4B93-8192-26E2B6757D7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "tests\tests.csproj", "{6DAE0DA3-39C0-49AD-B2D9-EBF8AB0946C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1110DC49-175D-459F-B3DD-8E18484A038F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1110DC49-175D-459F-B3DD-8E18484A038F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1110DC49-175D-459F-B3DD-8E18484A038F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1110DC49-175D-459F-B3DD-8E18484A038F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{861E9A1D-3521-4B93-8192-26E2B6757D7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{861E9A1D-3521-4B93-8192-26E2B6757D7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{861E9A1D-3521-4B93-8192-26E2B6757D7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{861E9A1D-3521-4B93-8192-26E2B6757D7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DAE0DA3-39C0-49AD-B2D9-EBF8AB0946C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DAE0DA3-39C0-49AD-B2D9-EBF8AB0946C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DAE0DA3-39C0-49AD-B2D9-EBF8AB0946C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DAE0DA3-39C0-49AD-B2D9-EBF8AB0946C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

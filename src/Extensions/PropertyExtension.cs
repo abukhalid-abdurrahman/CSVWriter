@@ -7,7 +7,7 @@ namespace CSVWriter.Extensions
     {
         public static void SetPropertyValue<T>(this object obj, string propertyName, T propertyValue) where T : IConvertible
         {
-            PropertyInfo propertyInfo = obj.GetType().GetProperty( propertyName );
+            var propertyInfo = obj.GetType().GetProperty( propertyName );
         
             if(propertyInfo != null && propertyInfo.CanWrite)
             {
