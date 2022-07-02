@@ -8,8 +8,9 @@ public static class FileComparator
     {
         var file1 = File.ReadAllBytes(path1);
         var file2 = File.ReadAllBytes(path2);
-        if (file1.Length != file2.Length) return false;
-        
+        if (file1.Length != file2.Length)
+            return false;
+
         for (var i = 0; i < file1.Length; i++)
         {
             if (file1[i] != file2[i])

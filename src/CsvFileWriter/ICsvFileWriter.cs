@@ -1,9 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿namespace CSVWriter.CsvFileWriter;
 
-namespace CSVWriter.CsvFileWriter
+public interface ICsvFileWriter
 {
-    public interface ICsvFileWriter
-    {
-        Task<bool> SaveCsvDocumentAsync(string path, params string[] lines);
-    }
+    Task<bool> SaveCsvDocumentAsync(string path, params string[] lines);
 }

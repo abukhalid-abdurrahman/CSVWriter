@@ -1,9 +1,6 @@
-using System;
 using System.Threading.Tasks;
-using CSVWriter.CsvFileReader;
 using CSVWriter.Enums;
 using CSVWriter.Models;
-using CSVWriter.Reader;
 using CSVWriter.Writer;
 using tests.Helpers;
 using Xunit;
@@ -43,7 +40,7 @@ public class FullTest
             Salary = 2345.98m
         };
 
-        var writer = new CsvWriter<User>(CsvDelimetterType.Comma);
+        var writer = new CsvWriter<User>(CsvDelimiterType.Comma);
 
         writer.WriteLine(user);
         writer.WriteLine(user1);
@@ -56,7 +53,7 @@ public class FullTest
         writer.WriteLine(user);
         writer.WriteLine(user1);
         await writer.SaveDocumentAsync("test.csv");
-        
+
         // Assert
         Assert.True(FileComparator.FileEquals("../../../Fixtures/WriteTestResult.csv", "test.csv"));
     }
