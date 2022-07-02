@@ -3,12 +3,9 @@
  * Developed by Faridun Berdiev
  */
 
-using System;
+namespace CSVWriter.Attributes;
 
-namespace CSVWriter.Attributes
+public class CsvColumnAttribute : Attribute
 {
-    public class CsvColumnAttribute : Attribute
-    {
-        public string Name { get; set; }
-    }
+    public string Name { get; set; }
 }
