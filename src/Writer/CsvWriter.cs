@@ -57,11 +57,11 @@ namespace CSVWriter.Writer
         {
             try
             {
-                List<string> rows = new List<string>();
+                var rows = new List<string>();
                 foreach (var element in _csvData)
                 {
                     List<string> rowElements = element.Values.Select(x => x == null ? "-" : x.ToString().Replace("\"", "\"\"")).ToList();
-                    string rowStr = string.Join(_delimetterType == CsvDelimetterType.Comma ? "," : ";", 
+                    var rowStr = string.Join(_delimetterType == CsvDelimetterType.Comma ? "," : ";", 
                         rowElements
                              .Select(x => x.Contains(",") && _delimetterType == CsvDelimetterType.Comma ? "\"" + x + "\"" : x.Replace(';', '.')));
                     
