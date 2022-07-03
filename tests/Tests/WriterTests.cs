@@ -1,10 +1,8 @@
-using System.IO;
-using CSVWriter.CsvFileReader;
-using CSVWriter.CsvFileWriter;
 
 public class WrtiterTests
 {
     private readonly string[] data = new string[] { "first,line", "second,line" };
+
     public Task CreateTheFileAsync(string fileName)
     {
         var writer = new CsvFileWriter();

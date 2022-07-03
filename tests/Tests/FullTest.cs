@@ -1,20 +1,7 @@
-using CSVWriter.Enums;
-using CSVWriter.Models;
-using CSVWriter.Writer;
-using tests.Helpers;
-using Xunit.Abstractions;
-
 namespace tests;
 
 public class FullTest
 {
-    private readonly ITestOutputHelper _testOutputHelper;
-
-    public FullTest(ITestOutputHelper testOutputHelper)
-    {
-        _testOutputHelper = testOutputHelper;
-    }
-
     [Fact]
     public async Task Test_Read_Write()
     {
