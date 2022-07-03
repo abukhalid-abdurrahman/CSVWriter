@@ -23,5 +23,10 @@
   <ItemGroup>
     <ProjectReference Include="..\src\src.csproj" />
   </ItemGroup>
+    <ItemGroup>
+    <Content Include="Fixtures\*.*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>  
+  </ItemGroup>
 
 </Project>
