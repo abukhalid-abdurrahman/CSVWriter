@@ -9,10 +9,7 @@ public class CsvFileReader : ICsvFileReader
     /// </summary>
     /// <param name="documentFileName">Contains path to csv file</param>
     /// <returns>List of csv file lines</returns>
-    public async Task<List<string>> ReadCsvDocumentAsync(string documentFileName) =>
-        await ReadDocument(documentFileName);
-
-    private async Task<List<string>> ReadDocument(string documentFileName)
+    public async Task<List<string>> ReadCsvDocumentLinesAsync(string documentFileName)
     {
         var data = new List<string>();
         using var reader = new StreamReader(documentFileName, Encoding.UTF8);

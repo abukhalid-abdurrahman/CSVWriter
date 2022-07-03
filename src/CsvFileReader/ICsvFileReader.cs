@@ -2,5 +2,5 @@
 
 public interface ICsvFileReader
 {
-    Task<List<string>> ReadCsvDocumentAsync(string documentFileName);
+    Task<List<string>> ReadCsvDocumentLinesAsync(string documentFileName);
 }
