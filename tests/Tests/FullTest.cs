@@ -55,6 +55,6 @@ public class FullTest
         await writer.SaveDocumentAsync("test.csv");
 
         // Assert
-        Assert.True(FileComparator.FileEquals("../../../Fixtures/WriteTestResult.csv", "test.csv"));
+        Assert.True(FileComparator.FileEquals("Fixtures/WriteTestResult.csv", "test.csv"));
     }
 }
