@@ -1,9 +1,7 @@
-using System.Threading.Tasks;
 using CSVWriter.Enums;
 using CSVWriter.Models;
 using CSVWriter.Writer;
 using tests.Helpers;
-using Xunit;
 using Xunit.Abstractions;
 
 namespace tests;
