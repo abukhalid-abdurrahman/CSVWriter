@@ -11,7 +11,7 @@ namespace CSVWriter.Reader;
 
 public class CsvReader<T> : ICsvReader<T> where T : new()
 {
-    private CsvDelimiterType _delimiter;
+    private readonly CsvDelimiterType _delimiter;
 
     public CsvReader(CsvDelimiterType delimiter)
     {
@@ -35,7 +35,7 @@ public class CsvReader<T> : ICsvReader<T> where T : new()
     public async Task<List<T>> ReadCsvRowsAsync(List<string> rows, bool hasHeaders) =>
         await Task.Run(() => ReadCsvRows(rows, hasHeaders));
 
-    private List<T> ReadRows(List<string> rows, bool hasHeaders)
+    private List<T> ReadRows(IReadOnlyList<string> rows, bool hasHeaders)
     {
         var data = new List<T>();
 
@@ -52,7 +52,7 @@ public class CsvReader<T> : ICsvReader<T> where T : new()
         return data;
     }
 
-    private string[] SetCommaDelimiter(string row)
+    private static string[] SetCommaDelimiter(string row)
     {
         var cellBlockRegex = new Regex("\".*\"");
         var matchResult = cellBlockRegex.Match(row);
@@ -66,7 +66,7 @@ public class CsvReader<T> : ICsvReader<T> where T : new()
         return row.Split(',');
     }
 
-    private T SetModelProperty(string[] rowCells)
+    private static T SetModelProperty(string[] rowCells)
     {
         var properties = typeof(T).GetProperties().ToList();
 
