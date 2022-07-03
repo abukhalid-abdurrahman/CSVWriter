@@ -13,7 +13,7 @@ public class CsvFileWriter : ICsvFileWriter
     public async Task<bool> SaveCsvDocumentAsync(string path, params string[] lines) =>
         await TrySaveDocumentAsync(path, lines);
 
-    private async Task<bool> TrySaveDocumentAsync(string path, params string[] lines)
+    private static async Task<bool> TrySaveDocumentAsync(string path, params string[] lines)
     {
         try
         {
